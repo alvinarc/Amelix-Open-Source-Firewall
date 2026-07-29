@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "amelix"
+version = "0.1.0"
+description = "Amelix AI Security Firewall - modular cross-platform security agent"
+requires-python = ">=3.10"
+dependencies = [
+    "requests>=2.31.0",
+    "python-dotenv>=1.0.0",
+    "scikit-learn>=1.4.0",
+    "numpy>=1.26.0",
+    "pandas>=2.2.0",
+    "joblib>=1.3.0",
+    "tldextract>=5.1.0",
+    "opencv-python-headless>=4.9.0.0",
+    "qrcode[pil]>=7.4.2",
+]
+
+[project.scripts]
+amelix = "amelix.cli:main"
+amelix-gui = "amelix.gui:main"
+
+[tool.setuptools.packages.find]
+include = ["amelix*"]
+
+[tool.setuptools.package-data]
+amelix = ["assets/*.png"]
